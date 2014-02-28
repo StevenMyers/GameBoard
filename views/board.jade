@@ -1,0 +1,37 @@
+extends layout
+
+block nav
+  ul.nav.navbar-nav
+    li
+      a(href="#")
+        span#numPlayers 1
+        span &nbsp;
+        span Players
+  ul.nav.navbar-nav.navbar-right
+    li
+      a(href="#")
+        span#pid
+
+block board
+  div.btn-group
+    button#btn-value.btn.btn-default(type="button", style="width: 136px") Select a game...
+    button.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown")
+      span.caret
+    ul.dropdown-menu
+      li.game
+        a Hearts
+      li.game 
+        a Pitch
+    div#createDiv.btn-group
+      input#create.btn.btn-info(type='button', value='Create')
+      
+      
+block scripts
+  script(src='/js/board.js')
+  script.
+    if($('#pid').text()==='') {
+      $('#pid').text(randomPlayerName());
+    }
+    $(".game").click(function() {
+      $("#btn-value").text($(this).find('a').text());
+    })

@@ -1,0 +1,9 @@
+extends layout
+
+block board
+    input#createBoard.btn.btn-info(type='button', value='Create Board')
+block scripts
+  script.
+    $('#createBoard').click(function() { 
+      window.location = "b/" + randomSiteName(); 
+    });
