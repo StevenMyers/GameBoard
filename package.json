@@ -8,7 +8,8 @@
   "dependencies": {
     "express": "3.4.8",
     "jade": "*",
-    "less-middleware": "*",
-    "socket.io": "latest"
+    "socket.io": "*",
+    "mongodb": "*",
+    "monk": "*"
   }
 }

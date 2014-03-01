@@ -12,7 +12,6 @@ window.onload = function() {
     if(game.indexOf('Select a game') != -1){
       $(this).effect("bounce");
     } else {
-      console.log('emitting new game');
       socket.emit("new_game", {game: game, room: room});
     }
   });
